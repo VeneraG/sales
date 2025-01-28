@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Info</title>
+  <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+</head>
+<body>
+
+
+
+<h1>Sellers:</h1>
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Date Hiring</th>
+    <th>Position</th>
+  </tr>
+  {% for x in sellers %}
+    <tr>
+      <td>{{ x.id }}</td>
+      <td>{{ x.name }}</td>
+      <td>{{ x.lastname }}</td>
+      <td>{{ x.phone }}</td>
+      <td>{{ x.email }}</td>
+      <td>{{ x.date_hiring }}</td>
+      <td>{{ x.position }}</td>
+
+    </tr>
+  {% endfor %}
+</table>
+
+<h1>Items:</h1>
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Info</th>
+
+  </tr>
+  {% for x in items %}
+    <tr>
+      <td>{{ x.id }}</td>
+      <td>{{ x.name }}</td>
+      <td>{{ x.info }}</td>
+
+
+    </tr>
+  {% endfor %}
+</table>
+
+<h1>Our Clients <span style="color:red">&#10084;</span>:</h1>
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Phone</th>
+    <th>Email</th>
+
+  </tr>
+  {% for x in customers %}
+    <tr>
+      <td>{{ x.id }}</td>
+      <td>{{ x.name }}</td>
+      <td>{{ x.lastname }}</td>
+      <td>{{ x.phone }}</td>
+      <td>{{ x.email }}</td>
+
+
+    </tr>
+  {% endfor %}
+  </body>

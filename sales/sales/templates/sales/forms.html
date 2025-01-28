@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title%}
+{{title}}
+{%endblock%}
+{% block content %}
+    {% if form %}
+    <form method="POST">
+        {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Send" >
+    {% endif%}
+     {% if name %}
+        <h2>Привет, {{name}}, твой возраст: {{age}}</h2>
+     {% endif %}
+{%endblock%}

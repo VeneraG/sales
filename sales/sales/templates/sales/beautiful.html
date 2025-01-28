@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="mycard">
+    <h1>Sellers</h1>
+    <ul>
+      {% for x in sellers %}
+        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.name }} {{ x.lastname }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
